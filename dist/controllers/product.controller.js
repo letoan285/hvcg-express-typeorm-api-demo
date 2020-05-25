@@ -37,19 +37,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var typeorm_1 = require("typeorm");
-var Category_1 = require("../entity/Category");
+var Product_1 = require("../entity/Product");
 var ProductController = /** @class */ (function () {
     function ProductController() {
         var _this = this;
-        this.table = 'categories';
+        this.table = 'products';
         this.getAll = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
-            var categories;
+            var products;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Category_1.Category).find()];
+                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Product_1.Product).find()];
                     case 1:
-                        categories = _a.sent();
-                        return [2 /*return*/, res.json(categories)];
+                        products = _a.sent();
+                        return [2 /*return*/, res.json(products)];
                 }
             });
         }); };
@@ -57,7 +57,7 @@ var ProductController = /** @class */ (function () {
             var results;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Category_1.Category).findOne(req.params.id)];
+                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Product_1.Product).findOne(req.params.id)];
                     case 1:
                         results = _a.sent();
                         return [2 /*return*/, res.json(results)];
@@ -68,10 +68,10 @@ var ProductController = /** @class */ (function () {
             var newCategory, results;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Category_1.Category).create(req.body)];
+                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Product_1.Product).create(req.body)];
                     case 1:
                         newCategory = _a.sent();
-                        return [4 /*yield*/, typeorm_1.getRepository(Category_1.Category).save(newCategory)];
+                        return [4 /*yield*/, typeorm_1.getRepository(Product_1.Product).save(newCategory)];
                     case 2:
                         results = _a.sent();
                         return [2 /*return*/, res.json(results)];
@@ -82,12 +82,12 @@ var ProductController = /** @class */ (function () {
             var category, results;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Category_1.Category).findOne(req.params.id)];
+                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Product_1.Product).findOne(req.params.id)];
                     case 1:
                         category = _a.sent();
                         if (!category) return [3 /*break*/, 3];
-                        typeorm_1.getRepository(Category_1.Category).merge(category, req.body);
-                        return [4 /*yield*/, typeorm_1.getRepository(Category_1.Category).save(category)];
+                        typeorm_1.getRepository(Product_1.Product).merge(category, req.body);
+                        return [4 /*yield*/, typeorm_1.getRepository(Product_1.Product).save(category)];
                     case 2:
                         results = _a.sent();
                         return [2 /*return*/, res.json(results)];
@@ -99,7 +99,7 @@ var ProductController = /** @class */ (function () {
             var results;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Category_1.Category).delete(req.params.id)];
+                    case 0: return [4 /*yield*/, typeorm_1.getRepository(Product_1.Product).delete(req.params.id)];
                     case 1:
                         results = _a.sent();
                         return [2 /*return*/, res.json(results)];
